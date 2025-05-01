@@ -1,0 +1,8 @@
+**/.terraform/**
+**/.terragrunt-cache/**
+**tfplan**
+.terraform.lock.hcl
+*.pem
+.env.local
+atlantis.var
+ngrok.yml
