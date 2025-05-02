@@ -14,27 +14,16 @@ This guide helps you set up a local GitOps environment using **Atlantis**, **ngr
 ## 📁 Project Structure
 
 GitOps-Atlantis/
-
 ├── scripts/
-
 │ ├── local-setup.sh
-
 │ └── start-atlantis.sh
-
 ├── atlantis
-
 ├── atlantis_linux_386.zip
-
 ├── atlantis.var
-
 ├── atlantis.yaml
-
 ├── ngrok
-
 ├── ngrok.yml
-
 ├── repos.yaml
-
 └── README.md
 
 ## Step 1 – Initial Setup
