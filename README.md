@@ -29,7 +29,7 @@ GitOps-Atlantis/
 ## Step 1 – Initial Setup
 
 ### Make the setup script executable and run it:
-```bash
+
 chmod +x scripts/local-setup.sh
 ./scripts/local-setup.sh
 
