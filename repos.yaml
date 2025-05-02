@@ -4,20 +4,10 @@ repos: {}
     pre_workflow_hooks:
       run: "cat ~/workspace/git/gitops-with-atlantis/atlantis.yaml > atlantis.yaml"
     apply_requirements: ["approved", "mergeable"]
-    workflow: poc
+    workflow: destroy
 
 workflows:
-  poc:
-    plan:
-      steps:
-        - init:
-            extra_args: ["-upgrade"]
-        - plan
-
-    apply:
-      steps:
-        - apply
-
+  destroy:
     destroy:
       steps:
         - destroy
