@@ -12,8 +12,7 @@ workflows:
       steps:
         - init:
             extra_args: ["-upgrade"]
-        - plan:
-            extra_args: ["-var-file=tfvars/default.tfvars"]
+        - plan
 
     apply:
       steps:
