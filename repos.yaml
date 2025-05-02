@@ -17,7 +17,3 @@ workflows:
     apply:
       steps:
         - apply
-
-    destroy:
-      steps:
-        - destroy
