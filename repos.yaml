@@ -1,0 +1,25 @@
+repos: {}
+  - id: /*./
+    allows_overrides: ["workflow"]
+    pre_workflow_hooks:
+      run: "cat ~/workspace/git/gitops-with-atlantis/atlantis.yaml > atlantis.yaml"
+    apply_requirements: ["approved", "mergeable"]
+    workflow: poc
+    
+workflows:
+  poc:
+    plan:
+      steps:
+        - env:
+            name: TF_WORKSPACE
+            command: echo $WORKSPACE
+        - init
+        - plan:
+            extra_args: ["-var-file=tfvars/$WORKSPACE.tfvars"]
+
+    apply:
+      steps:
+        - env:
+            name: TF_WORKSPACE
+            command: echo $WORKSPACE
+        - apply
