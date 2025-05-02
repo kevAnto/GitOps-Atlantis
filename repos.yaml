@@ -5,21 +5,16 @@ repos: {}
       run: "cat ~/workspace/git/gitops-with-atlantis/atlantis.yaml > atlantis.yaml"
     apply_requirements: ["approved", "mergeable"]
     workflow: poc
-    
+
 workflows:
   poc:
     plan:
       steps:
-        - env:
-            name: TF_WORKSPACE
-            command: echo $WORKSPACE
-        - init
+        - init:
+            extra_args: ["-upgrade"]
         - plan:
-            extra_args: ["-var-file=tfvars/$WORKSPACE.tfvars"]
+            extra_args: ["-var-file=tfvars/default.tfvars"]
 
     apply:
       steps:
-        - env:
-            name: TF_WORKSPACE
-            command: echo $WORKSPACE
         - apply
